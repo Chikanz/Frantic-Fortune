@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbd7394e6cbcf6b488f49b37277d4356, type: 3}
+  m_Name: Gay Guy
+  m_EditorClassIdentifier: 
+  Name: 
+  CharacterSprite: {fileID: 21300000, guid: c732738259e1c254aa11003a0408e7f6, type: 3}
+  HandSprite: {fileID: 21300000, guid: c732738259e1c254aa11003a0408e7f6, type: 3}
+  Questions:
+  - prompt: Who do you see in my future?
+    answers:
+    - smallAnswer: The blonde
+      extendedAnswer: You'll find the bonde!
+      review: Things didn't work out with the blonde though
+      customerResponse: Wow! That sounds exciting!
+    - smallAnswer: The brunette
+      extendedAnswer: I see you finding a brunette...
+      review: Nah
+      customerResponse: Wow! I love hair colours!
+    - smallAnswer: The Steve
+      extendedAnswer: I forsee you running into steve from the gym again
+      review: WOw! worked great! 10/10
+      customerResponse: Steve?!?! You think so??
+  introText: 

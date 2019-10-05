@@ -7,6 +7,9 @@ public class DialougeRunner : MonoBehaviour
 {
     public float textAddSpeed = 0.15f;
     private TextMeshProUGUI TMP;
+    public string CurrentText { get; private set;}
+    
+    public bool isRunning { get; private set; }
     
     // Start is called before the first frame update
     void Awake()
@@ -22,16 +25,17 @@ public class DialougeRunner : MonoBehaviour
 
     public void RunString(string s)
     {
-        
+        StartCoroutine(RunStringCoroutine(s));
     }
 
     public IEnumerator RunStringCoroutine(string s)
     {
         StopCoroutine(RunStringCoroutine(""));
         TMP.text = "";
+        CurrentText = s;
         
         int index = 0;
-        WaitForSeconds wait = new WaitForSeconds(textAddSpeed);
+        WaitForSecondsRealtime wait = new WaitForSecondsRealtime(textAddSpeed);
         while (index < s.Length)
         {
             TMP.text += s[index];
@@ -39,7 +43,7 @@ public class DialougeRunner : MonoBehaviour
             yield return wait;
         }
         
-        yield return null;
+        yield return new WaitForSecondsRealtime(1);
     }
     
 }

@@ -9,7 +9,9 @@
           <e p="CustomerData.cs" t="Include" />
           <e p="DialougeRunner.cs" t="Include" />
           <e p="FortuneRunner.cs" t="Include" />
+          <e p="HandMover.cs" t="Include" />
         </e>
+        <e p="SmolSway.cs" t="Include" />
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">
             <e p="LiberationSans - OFL.txt" t="Include" />

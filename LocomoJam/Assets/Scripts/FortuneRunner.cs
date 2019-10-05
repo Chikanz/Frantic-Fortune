@@ -15,6 +15,8 @@ public class FortuneRunner : MonoBehaviour
 
     public TextMeshProUGUI[] ResponseOptions;
 
+    public HandMover HM;
+
     private int customerIndex;
 
     public float TimePerQuestion = 15;
@@ -27,6 +29,10 @@ public class FortuneRunner : MonoBehaviour
     private string CurrentReview;
 
     private WaitUntil waitForAnyKey;
+    private bool canExclaim = true;
+
+    public response defaultResponse;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -46,7 +52,7 @@ public class FortuneRunner : MonoBehaviour
         var c = Customers[customerIndex];
         
         //character intro
-        DR.RunString(c.introText);
+        DR.RunString($"{c.name}: {c.introText}");
        
         //Hand intro
         Hand.gameObject.SetActive(true);
@@ -56,11 +62,11 @@ public class FortuneRunner : MonoBehaviour
         Character.gameObject.SetActive(false);
         Character.sprite = c.CharacterSprite;
 
-        //question loop
+        //question loop 
         foreach (Question q in c.Questions)
         {
             //Read prompt
-            yield return DR.RunStringCoroutine(q.prompt);
+            yield return DR.RunStringCoroutine($"{c.name}: {q.prompt}");
 
             //show answers
             for (int i = 0; i < 3; i++)
@@ -71,24 +77,49 @@ public class FortuneRunner : MonoBehaviour
             //Show answer progress bar + decrement
             questionTimer = TimePerQuestion;
             response = null;
-            while (questionTimer >= 0 && response == null)
+            canExclaim = true;
+            while (questionTimer > 0 && response == null)
             {
                 questionTimer -= Time.deltaTime;
                 QuestionTimeSlider.value = questionTimer / TimePerQuestion;
+                
+                //Check for like
+                
+                //Check for hand out of bounds
+                if (!HM.inBounds && canExclaim)
+                {
+                    StartCoroutine(Exclaim($"{c.name}: Hey! Focus up!"));
+                    //Deduct points here
+                }
+                //check for hand still
+                if (HM.isStill && canExclaim)
+                {
+                    StartCoroutine(Exclaim($"{c.name}: Hey! do you have a palm fetish or something???"));
+                }
+                    
                 yield return null;
+            }
+
+            response selectedResponse;
+            if (questionTimer <= 0 && response == null) //Default answer
+            {
+                //Neg points
+                selectedResponse = defaultResponse;
+            }
+            else
+            {
+                selectedResponse = q.answers[response.Value];
             }
 
             //hide progress bar
             QuestionTimeSlider.gameObject.SetActive(false);
 
-            var selectedResponse = q.answers[response.Value];
-            
             //Teller response
-            yield return DR.RunStringCoroutine(selectedResponse.extendedAnswer);
+            yield return DR.RunStringCoroutine($"You: {selectedResponse.extendedAnswer}");
 
             yield return waitForAnyKey;
             //character response
-            yield return DR.RunStringCoroutine(selectedResponse.customerResponse);
+            yield return DR.RunStringCoroutine($"{c.name}: {selectedResponse.customerResponse}");
 
             //Add review
             yield return waitForAnyKey;
@@ -96,7 +127,7 @@ public class FortuneRunner : MonoBehaviour
         }
 
         //character and hand intro leave
-        yield return DR.RunStringCoroutine("Cool, thanks!");
+        yield return DR.RunStringCoroutine($"{c.name}: Cool, thanks!");
 
         //Get review
         
@@ -107,5 +138,15 @@ public class FortuneRunner : MonoBehaviour
         response = answer;
         
         //Maybe fade other answers here
+    }
+
+    //Exclaim something in the middle of dialouge
+    private IEnumerator Exclaim(string s)
+    {
+        canExclaim = false;
+        string previous = DR.CurrentText;
+        DR.RunString(s); 
+        yield return new WaitForSeconds(3);
+        DR.RunString(previous);
     }
 }

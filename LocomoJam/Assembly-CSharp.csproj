@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\CustomerData.cs" />
     <Compile Include="Assets\Scripts\DialougeRunner.cs" />
     <Compile Include="Assets\Scripts\FortuneRunner.cs" />
+    <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\HandMover.cs" />
     <Compile Include="Assets\Scripts\SocialInterestController.cs" />
     <Compile Include="Assets\Scripts\SocialPostController.cs" />

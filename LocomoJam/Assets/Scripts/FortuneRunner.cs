@@ -59,7 +59,7 @@ public class FortuneRunner : MonoBehaviour
     {
         foreach (CustomerData c in Customers)
         {
-            SPC.Setup(c.FacebookData); //load facebook data
+            SPC.SetupProfile(c.FacebookData); //load facebook data
             
             //Hand intro
             Hand.gameObject.SetActive(true);

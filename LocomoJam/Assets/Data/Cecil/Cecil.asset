@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbd7394e6cbcf6b488f49b37277d4356, type: 3}
-  m_Name: First dude
+  m_Name: Cecil
   m_EditorClassIdentifier: 
   CharacterName: Cecil
   CharacterSprite: {fileID: 21300000, guid: e2b04e1b3c54ba5469aa86262fdd72e9, type: 3}
@@ -72,3 +72,4 @@ MonoBehaviour:
       review: CAN'T BELIEVE DEY FOUGHT I SHOULD STOP TALKING TO CANDICE THIS IS UNBEWEVABLE
       customerResponse: WHAT??? I'LL NEVER STOP WOVING CANDICE SHE'S THE ONE
       points: -1
+  FacebookData: {fileID: 11400000, guid: a7b26b54bc67c0943ad3eaea816fd7be, type: 2}

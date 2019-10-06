@@ -170,6 +170,7 @@
           <e p="CustomerData.cs" t="Include" />
           <e p="DialougeRunner.cs" t="Include" />
           <e p="FortuneRunner.cs" t="Include" />
+          <e p="GameController.cs" t="Include" />
           <e p="HandMover.cs" t="Include" />
           <e p="SocialInterestController.cs" t="Include" />
           <e p="SocialPostController.cs" t="Include" />

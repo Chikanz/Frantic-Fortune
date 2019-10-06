@@ -36,11 +36,16 @@ public class DialougeRunner : MonoBehaviour
         
         int index = 0;
         WaitForSecondsRealtime wait = new WaitForSecondsRealtime(textAddSpeed);
+        WaitForSecondsRealtime waitLonger = new WaitForSecondsRealtime(textAddSpeed * 2);
         while (index < s.Length)
         {
-            TMP.text += s[index];
+            var c = s[index];
+            TMP.text += c;
             index++;
-            yield return wait;
+            if (c == '!' || c == '?') 
+                yield return waitLonger;
+            else
+                yield return wait;
             yield return new WaitForEndOfFrame();
         }
         

@@ -15,6 +15,7 @@ public class Loader
 
 public class SocialProfileController : MonoBehaviour
 {
+	public Canvas canvas;
 	[Header("Fakebook Profile")]
 	public GameObject profilePanel;
 	public Image profileImage;
@@ -53,8 +54,15 @@ public class SocialProfileController : MonoBehaviour
 		OnReviewButtonPressed = null;
 	}
 
+	private bool updateCanvas = true;
 	private void Update()
 	{
+		if (updateCanvas)
+		{
+			updateCanvas = false;
+			Canvas.ForceUpdateCanvases();
+			LayoutRebuilder.ForceRebuildLayoutImmediate(profilePanel.transform as RectTransform);
+		}
 		if (loaderPanel == null || profilePanel == null || reviewPanel == null)
 			return;
 
@@ -66,6 +74,7 @@ public class SocialProfileController : MonoBehaviour
 				loaderPanel.SetActive(false);
 				//profilePanel.SetActive(true);
 				reviewPanel.SetActive(false);
+				updateCanvas = true;
 			}
 		}
 	}

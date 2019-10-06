@@ -416,7 +416,7 @@ MonoBehaviour:
   - {fileID: 536538790}
   - {fileID: 1808998021}
   HM: {fileID: 745716094}
-  TimePerQuestion: 25
+  TimePerQuestion: 30
   QuestionTimeSlider: {fileID: 671868418}
   defaultResponse:
     smallAnswer: uhh

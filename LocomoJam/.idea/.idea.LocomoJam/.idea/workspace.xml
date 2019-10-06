@@ -83,7 +83,7 @@
         <entry file="file://$PROJECT_DIR$/Assets/SmolSway.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="359">
-              <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+              <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
               <folding>
                 <marker date="1570342965655" expanded="true" signature="6:78" ph="..." />
                 <marker date="1570342965655" expanded="true" signature="117:1155" ph="{...}" />
@@ -236,12 +236,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1570238584592</updated>
-      <workItem from="1570238595546" duration="28699000" />
+      <workItem from="1570238595546" duration="28968000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28699000" />
+    <option name="totallyTimeSpent" value="28968000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -409,7 +409,7 @@
     <entry file="file://$PROJECT_DIR$/Assets/SmolSway.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="359">
-          <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+          <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
           <folding>
             <marker date="1570342965655" expanded="true" signature="6:78" ph="..." />
             <marker date="1570342965655" expanded="true" signature="117:1155" ph="{...}" />

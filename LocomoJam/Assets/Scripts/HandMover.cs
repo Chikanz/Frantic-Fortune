@@ -27,10 +27,10 @@ public class HandMover : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         //move da hand
-        inBounds = collider.bounds.Contains(transform.GetChild(0).position);
+        inBounds = collider.bounds.Contains(transform.GetChild(0).GetChild(0).position);
 
         var h = Input.GetAxis("Horizontal");
         var v = Input.GetAxis("Vertical");

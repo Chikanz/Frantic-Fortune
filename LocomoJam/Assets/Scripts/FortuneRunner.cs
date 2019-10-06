@@ -28,8 +28,9 @@ public class FortuneRunner : MonoBehaviour
 
     private string CurrentReview;
 
-    private WaitUntil waitForAnyKey;
-    private bool canExclaim = true;
+    private WaitForSeconds waitForAnyKey;
+    private bool canExclaimFocus = true;
+    private bool canExclaimPalm = true;
 
     public response defaultResponse;
 
@@ -41,7 +42,8 @@ public class FortuneRunner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        waitForAnyKey = new WaitUntil(() => Input.anyKey);
+        //waitForAnyKey = new WaitUntil(() => Input.anyKey);
+        waitForAnyKey = new WaitForSeconds(1);
         ResponseOptionsParent.SetActive(false);
         QuestionTimeSlider.gameObject.SetActive(false);
 
@@ -89,7 +91,7 @@ public class FortuneRunner : MonoBehaviour
                 //Show answer progress bar + decrement
                 questionTimer = TimePerQuestion;
                 response = null;
-                canExclaim = true;
+                canExclaimFocus = true;
                 while (questionTimer > 0 && response == null)
                 {
                     questionTimer -= Time.deltaTime;
@@ -98,16 +100,18 @@ public class FortuneRunner : MonoBehaviour
                     //Check for like
 
                     //Check for hand out of bounds
-                    bool pastInitTime = questionTimer > TimePerQuestion;
-                    if (!HM.inBounds && canExclaim && pastInitTime)
+                    bool pastInitTime = questionTimer <= TimePerQuestion - 2;
+                    if (!HM.inBounds && canExclaimFocus && pastInitTime)
                     {
+                        canExclaimFocus = false;
                         StartCoroutine(Exclaim($"{c.CharacterName}: Hey! Focus up!"));
                         //Deduct points here
                     }
 
                     //check for hand still
-                    if (HM.isStill && canExclaim && pastInitTime)
+                    if (HM.isStill && canExclaimPalm && pastInitTime)
                     {
+                        canExclaimPalm = false;
                         StartCoroutine(Exclaim($"{c.CharacterName}: Hey! do you have a palm fetish or something???"));
                     }
 
@@ -159,7 +163,7 @@ public class FortuneRunner : MonoBehaviour
     //Exclaim something in the middle of dialouge
     private IEnumerator Exclaim(string s)
     {
-        canExclaim = false;
+        //canExclaimFocus = false;
         string previous = DR.CurrentText;
         DR.RunString(s);
         yield return new WaitForSeconds(3);

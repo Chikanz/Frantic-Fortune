@@ -21,8 +21,9 @@ public class SmolSway : MonoBehaviour
         float t = Time.time * timeFreq;
         var perlinx = Mathf.PerlinNoise(t, t + 3);
         var perliny = Mathf.PerlinNoise(t + 6, t + 2);
+        var perlinRot = Mathf.PerlinNoise(t+4, t - 1);
         transform.position = startPos + (new Vector3(perlinx, perliny, 0) * moveMag);
         
-        transform.rotation = Quaternion.EulerAngles(0,0,perlinx * rotationFactor);
+        transform.rotation = Quaternion.EulerAngles(0,0,perlinRot * rotationFactor);
     }
 }

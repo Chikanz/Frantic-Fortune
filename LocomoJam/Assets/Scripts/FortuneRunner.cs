@@ -32,12 +32,17 @@ public class FortuneRunner : MonoBehaviour
     private bool canExclaim = true;
 
     public response defaultResponse;
+
+    private GameObject ResponseOptionsParent => ResponseOptions[0].transform.parent.parent.gameObject;
     
     
     // Start is called before the first frame update
     void Start()
     {
         waitForAnyKey = new WaitUntil(() => Input.anyKey);
+        ResponseOptionsParent.SetActive(false);
+        QuestionTimeSlider.gameObject.SetActive(false);
+        
         StartCoroutine(GameLoop());
     }
 
@@ -52,23 +57,27 @@ public class FortuneRunner : MonoBehaviour
         var c = Customers[customerIndex];
         
         //character intro
-        DR.RunString($"{c.name}: {c.introText}");
+        yield return DR.RunStringCoroutine($"{c.CharacterName}: {c.introText}");
        
         //Hand intro
         Hand.gameObject.SetActive(true);
         Hand.sprite = c.HandSprite;
 
-        //Your hand intro
-        Character.gameObject.SetActive(false);
+        //Your hand intro //todo
+        Character.gameObject.SetActive(true);
         Character.sprite = c.CharacterSprite;
+        
+        yield return waitForAnyKey;
 
         //question loop 
         foreach (Question q in c.Questions)
         {
             //Read prompt
-            yield return DR.RunStringCoroutine($"{c.name}: {q.prompt}");
+            yield return DR.RunStringCoroutine($"{c.CharacterName}: {q.prompt}");
 
             //show answers
+            QuestionTimeSlider.gameObject.SetActive(true);
+            ResponseOptionsParent.SetActive(true);
             for (int i = 0; i < 3; i++)
             {
                 ResponseOptions[i].text = q.answers[i].smallAnswer;
@@ -86,20 +95,23 @@ public class FortuneRunner : MonoBehaviour
                 //Check for like
                 
                 //Check for hand out of bounds
-                if (!HM.inBounds && canExclaim)
+                bool pastInitTime = questionTimer > TimePerQuestion;
+                if (!HM.inBounds && canExclaim && pastInitTime)
                 {
-                    StartCoroutine(Exclaim($"{c.name}: Hey! Focus up!"));
+                    StartCoroutine(Exclaim($"{c.CharacterName}: Hey! Focus up!"));
                     //Deduct points here
                 }
                 //check for hand still
-                if (HM.isStill && canExclaim)
+                if (HM.isStill && canExclaim && pastInitTime)
                 {
-                    StartCoroutine(Exclaim($"{c.name}: Hey! do you have a palm fetish or something???"));
+                    StartCoroutine(Exclaim($"{c.CharacterName}: Hey! do you have a palm fetish or something???"));
                 }
                     
                 yield return null;
             }
 
+            ResponseOptionsParent.SetActive(false);
+            
             response selectedResponse;
             if (questionTimer <= 0 && response == null) //Default answer
             {
@@ -119,7 +131,7 @@ public class FortuneRunner : MonoBehaviour
 
             yield return waitForAnyKey;
             //character response
-            yield return DR.RunStringCoroutine($"{c.name}: {selectedResponse.customerResponse}");
+            yield return DR.RunStringCoroutine($"{c.CharacterName}: {selectedResponse.customerResponse}");
 
             //Add review
             yield return waitForAnyKey;
@@ -127,7 +139,7 @@ public class FortuneRunner : MonoBehaviour
         }
 
         //character and hand intro leave
-        yield return DR.RunStringCoroutine($"{c.name}: Cool, thanks!");
+        yield return DR.RunStringCoroutine($"{c.CharacterName}: Cool, thanks!");
 
         //Get review
         

@@ -53,4 +53,9 @@ public class HandMover : MonoBehaviour
             isStill = false;
         }
     }
+
+    public void ResetMoveTimer()
+    {
+        stillTimer = 0;
+    }
 }

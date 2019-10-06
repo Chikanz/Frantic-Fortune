@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbd7394e6cbcf6b488f49b37277d4356, type: 3}
+  m_Name: First dude
+  m_EditorClassIdentifier: 
+  CharacterName: Cecil
+  CharacterSprite: {fileID: 21300000, guid: e2b04e1b3c54ba5469aa86262fdd72e9, type: 3}
+  HandSprite: {fileID: 21300000, guid: baaa02791932cbc4f94e5cfa42574261, type: 3}
+  introText: H-h-hi i'd like my fwortune told pwease
+  OutroText: Ok fwanks! Now I just gotta find Candice...
+  Questions:
+  - prompt: I jwust want to twest your abwilities first ... Whats my best fwends name?
+    answers:
+    - smallAnswer: Park ducks
+      extendedAnswer: Your best friend's name... is park duck?
+      review: 'They didn''t even know my best fwends name! '
+      customerResponse: Wow how did yo- ..wait a swecond
+      points: -1
+    - smallAnswer: 'Candice '
+      extendedAnswer: Your best friend's name is... candice
+      review: They knew my best fwend's name too!!!
+      customerResponse: Wow how did you know!! You really are psychic!!
+      points: 1
+    - smallAnswer: Steve
+      extendedAnswer: Your best friends name is... Steve???
+      review: 'They didn''t even know my best fwends name! '
+      customerResponse: Steve?!?! You think so?? Wait I don't know any steves...
+      points: -1
+  - prompt: Ok! Ok! I want to knoww... Who's my soul mate??
+    answers:
+    - smallAnswer: Candice
+      extendedAnswer: 'I see... Your soul mate is... Candice '
+      review: WOW I CWAN'T BELIEVE THEY KNEW MY SWOL MATE!!!
+      customerResponse: WOW WEALLY??? THAT'S SO COOL!!
+      points: 1
+    - smallAnswer: Keep searching
+      extendedAnswer: You have not encountered them yet... You must keep searching
+      review: also they didn't even know who my swol mate was
+      customerResponse: NO!!! I ALREADY HAVE!!! I'M SURE!!
+      points: -1
+    - smallAnswer: Rupert
+      extendedAnswer: The lines tell me... your soul mate is Rupert
+      review: CAN'T BELIEVE DEY FOUGHT MY SWOL MATE WAS RUPERT I HATE HIM!!!
+      customerResponse: WHAT?? nO WAY I HATE RUPERT HE DOESN'T EVEN LIKE MY TWUMPERT!!!
+      points: -1
+  - prompt: 'Alright... What can I do two get Candice to wove me forever??? '
+    answers:
+    - smallAnswer: Try showering
+      extendedAnswer: The stars tell me... you must seek the water... like some sort
+        of shower?
+      review: 
+      customerResponse: hmmm I don't know... but if it'll make candice wove me...
+      points: 0
+    - smallAnswer: Get flowers
+      extendedAnswer: Your palm tells me... candice needs a big romantic gesture...
+        Like flowers
+      review: 'I twied giving my swol make flours like the psychic said but she just
+        told me to "stop following her" and that "served you coffee like once"... '
+      customerResponse: Wow! I nwever thought of that! I'll try that right now!
+      points: 1
+    - smallAnswer: don't
+      extendedAnswer: The lines tell me... you should not persue candice any further
+      review: CAN'T BELIEVE DEY FOUGHT I SHOULD STOP TALKING TO CANDICE THIS IS UNBEWEVABLE
+      customerResponse: WHAT??? I'LL NEVER STOP WOVING CANDICE SHE'S THE ONE
+      points: -1

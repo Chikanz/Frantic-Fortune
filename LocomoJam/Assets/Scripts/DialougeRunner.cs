@@ -24,12 +24,17 @@ public class DialougeRunner : MonoBehaviour
     }
 
     public void RunString(string s)
-    {
-        //StopCoroutine(RunStringCoroutine(""));
+    { 
         StartCoroutine(RunStringCoroutine(s));
     }
-
+    
     public IEnumerator RunStringCoroutine(string s)
+    {
+        StopAllCoroutines();
+        yield return RunStringCoroutineInternal(s);
+    }
+    
+    private IEnumerator RunStringCoroutineInternal(string s)
     {
         TMP.text = ""; 
         CurrentText = s;
@@ -51,5 +56,4 @@ public class DialougeRunner : MonoBehaviour
         
         yield return new WaitForSecondsRealtime(1);
     }
-    
 }

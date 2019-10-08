@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class FortuneRunner : MonoBehaviour
@@ -10,8 +11,13 @@ public class FortuneRunner : MonoBehaviour
 
     public CustomerData[] Customers;
 
-    public Image Hand;
+    [FormerlySerializedAs("Hand")] [Header("Character Sprites")]
+    public Image CharacterHand;
     public Image Character;
+    public Image Head;
+
+    public HandIntro YourHand;
+    private HandIntro characterHandIntro;
 
     public TextMeshProUGUI[] ResponseOptions;
 
@@ -26,15 +32,19 @@ public class FortuneRunner : MonoBehaviour
 
     private int? response;
 
-    private string CurrentReview;
-
-    private WaitForSeconds waitForAnyKey;
+    private WaitForSeconds waitASec;
     private bool canExclaimFocus = true;
     private bool canExclaimPalm = true;
 
+    public string[] MysticShit;
+    private string GetMysticShit => MysticShit[Random.Range(0, MysticShit.Length)];
     public response defaultResponse;
 
     public SocialProfileController SPC;
+    
+    //Review
+    private int reviewScore;
+    private string reviewText;
 
     private GameObject ResponseOptionsParent => ResponseOptions[0].transform.parent.parent.gameObject;
 
@@ -43,10 +53,12 @@ public class FortuneRunner : MonoBehaviour
     void Start()
     {
         //waitForAnyKey = new WaitUntil(() => Input.anyKey);
-        waitForAnyKey = new WaitForSeconds(1);
+        waitASec = new WaitForSeconds(1.5f);
         ResponseOptionsParent.SetActive(false);
         QuestionTimeSlider.gameObject.SetActive(false);
 
+        characterHandIntro = CharacterHand.GetComponentInParent<HandIntro>();
+        
         StartCoroutine(GameLoop());
     }
 
@@ -60,19 +72,36 @@ public class FortuneRunner : MonoBehaviour
         foreach (CustomerData c in Customers)
         {
             SPC.SetupProfile(c.FacebookData); //load facebook data
+            reviewScore = 2;
+            reviewText = string.Empty;
             
-            //Hand intro
-            Hand.gameObject.SetActive(true);
-            Hand.sprite = c.HandSprite;
-
-            //Your hand intro //todo
+            //Character intro
             Character.gameObject.SetActive(true);
             Character.sprite = c.CharacterSprite;
-            
-            //character intro
-            yield return DR.RunStringCoroutine($"{c.CharacterName}: {c.introText}");
 
-            yield return waitForAnyKey;
+            StartCoroutine(FadeSprite(Head, 0, 1, 1.5f));
+            yield return FadeSprite(Character, 0, 1, 1.5f);
+            
+            //character intro text
+            yield return DR.RunStringCoroutine($"{c.CharacterName}: {c.introText}");
+            
+            //Hand intro
+            CharacterHand.gameObject.SetActive(true);
+            CharacterHand.sprite = c.HandSprite;
+            characterHandIntro.TogglePos(true);
+            
+            yield return waitASec;
+            
+            //Your hand intro
+            YourHand.enabled = true;
+            YourHand.TogglePos(true);
+            yield return waitASec;
+
+            //setup default response
+            defaultResponse.customerResponse = c.tooLong;
+            
+            yield return waitASec;
+            YourHand.enabled = false;
 
             //question loop 
             foreach (Question q in c.Questions)
@@ -104,7 +133,7 @@ public class FortuneRunner : MonoBehaviour
                     if (!HM.inBounds && canExclaimFocus && pastInitTime)
                     {
                         canExclaimFocus = false;
-                        StartCoroutine(Exclaim($"{c.CharacterName}: Hey! Focus up!"));
+                        StartCoroutine(Exclaim($"{c.CharacterName}: {c.palmBounds}"));
                         //Deduct points here
                     }
 
@@ -112,7 +141,7 @@ public class FortuneRunner : MonoBehaviour
                     if (HM.isStill && canExclaimPalm && pastInitTime)
                     {
                         canExclaimPalm = false;
-                        StartCoroutine(Exclaim($"{c.CharacterName}: Hey! do you have a palm fetish or something???"));
+                        StartCoroutine(Exclaim($"{c.CharacterName}: {c.palmStill}"));
                     }
 
                     yield return null;
@@ -124,30 +153,46 @@ public class FortuneRunner : MonoBehaviour
                 if (questionTimer <= 0 && response == null) //Default answer
                 {
                     //Neg points
+                    reviewScore -= 1;
                     selectedResponse = defaultResponse;
                 }
                 else
                 {
                     selectedResponse = q.answers[response.Value];
+                    reviewScore += selectedResponse.points;
+                    reviewText += $"{selectedResponse.review} ";
                 }
 
                 //hide progress bar
                 QuestionTimeSlider.gameObject.SetActive(false);
 
                 //Teller response
-                yield return DR.RunStringCoroutine($"You: {selectedResponse.extendedAnswer}");
+                yield return DR.RunStringCoroutine($"You: {GetMysticShit}... {selectedResponse.extendedAnswer}.");
 
-                yield return waitForAnyKey;
+                yield return waitASec;
                 //character response
+                if (selectedResponse.points > 0) StartCoroutine(React(c.GoodReact, c.HeadSprite, c.reactOnBody));
+                if (selectedResponse.points < 0) StartCoroutine(React(c.BadReact, c.HeadSprite, c.reactOnBody));
                 yield return DR.RunStringCoroutine($"{c.CharacterName}: {selectedResponse.customerResponse}");
-
-                //Add review
-                yield return waitForAnyKey;
-                CurrentReview += selectedResponse.review;
+                
+                yield return waitASec;
             }
-
-            //character and hand intro leave
+            
+            //Outtro
             yield return DR.RunStringCoroutine($"{c.CharacterName}: {c.OutroText}");
+            
+            //leave hand
+            YourHand.enabled = true;
+            YourHand.TogglePos(false);
+
+            yield return waitASec;
+            
+            //leave character
+            
+            
+            //todo ourtro
+            reviewScore = Mathf.Clamp(reviewScore, 0, 5);
+            SPC.OpenReview(reviewText, reviewScore); 
 
             //Get review
         }
@@ -168,5 +213,28 @@ public class FortuneRunner : MonoBehaviour
         DR.RunString(s);
         yield return new WaitForSeconds(3);
         DR.RunString(previous);
+    }
+
+    private IEnumerator React(Sprite s, Sprite normal, bool onBody)
+    {
+        Image partToChange = onBody ? Character : Head;
+        
+        if (partToChange.sprite == s || s == null) yield break; //Already set
+        
+        partToChange.sprite = s;
+        yield return new WaitForSeconds(5);
+        partToChange.sprite = normal;
+    }
+
+    private IEnumerator FadeSprite(Image i, float from, float to, float time)
+    {
+        float elapsed = 0;
+        var c = i.color;
+        while (elapsed < time)
+        {
+            elapsed += Time.deltaTime;
+            i.color = new Color(c.r, c.g, c.b, elapsed/time);
+            yield return null;
+        }
     }
 }

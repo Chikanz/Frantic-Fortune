@@ -13,27 +13,34 @@ MonoBehaviour:
   m_Name: Cecil
   m_EditorClassIdentifier: 
   CharacterName: Cecil
-  CharacterSprite: {fileID: 21300000, guid: e2b04e1b3c54ba5469aa86262fdd72e9, type: 3}
+  CharacterSprite: {fileID: 21300000, guid: c86d0d2dcb81ffc419aa66a4ecff3d96, type: 3}
   HandSprite: {fileID: 21300000, guid: baaa02791932cbc4f94e5cfa42574261, type: 3}
+  HeadSprite: {fileID: 21300000, guid: f4350600a8d76b74e9b6a5be847af080, type: 3}
+  GoodReact: {fileID: 21300000, guid: d2a5db833ccd08641943d9273fd3fb7f, type: 3}
+  BadReact: {fileID: 21300000, guid: a46a0d83e78c09a4881c53578c68d337, type: 3}
+  reactOnBody: 0
   introText: H-h-hi i'd like my fwortune told pwease
   OutroText: Ok fwanks! Now I just gotta find Candice...
+  palmBounds: Hey! My pwams over here!
+  palmStill: Hey! Do you have a palm fetish or something???
+  tooLong: WHAT IS THAT SUPPOSED TO MEAN?????
   Questions:
-  - prompt: I jwust want to twest your abwilities first ... Whats my best fwends name?
+  - prompt: I jwust want to test your abwilities first ... Whats my best fwends name?
     answers:
     - smallAnswer: Park ducks
-      extendedAnswer: Your best friend's name... is park duck?
+      extendedAnswer: Your best friend's name... is park ducks?
       review: 'They didn''t even know my best fwends name! '
-      customerResponse: Wow how did yo- ..wait a swecond
+      customerResponse: Wow how did yo- ..WAIT A SECOND NO IT'S CANDICE!!!!
       points: -1
     - smallAnswer: 'Candice '
       extendedAnswer: Your best friend's name is... candice
       review: They knew my best fwend's name too!!!
       customerResponse: Wow how did you know!! You really are psychic!!
       points: 1
-    - smallAnswer: Steve
-      extendedAnswer: Your best friends name is... Steve???
+    - smallAnswer: Rupert
+      extendedAnswer: Your best friends name is... Rupert?
       review: 'They didn''t even know my best fwends name! '
-      customerResponse: Steve?!?! You think so?? Wait I don't know any steves...
+      customerResponse: RUPERT???? I HATE RUPERT HE DOESN'T LIKE MY TRUMPET!!!!
       points: -1
   - prompt: Ok! Ok! I want to knoww... Who's my soul mate??
     answers:
@@ -44,31 +51,29 @@ MonoBehaviour:
       points: 1
     - smallAnswer: Keep searching
       extendedAnswer: You have not encountered them yet... You must keep searching
-      review: also they didn't even know who my swol mate was
-      customerResponse: NO!!! I ALREADY HAVE!!! I'M SURE!!
+      review: also they didn't even know who my swol mate was.
+      customerResponse: 'NO!!! I ALREADY HAVE!!! I''M SURE!! IT''S CANDICE!!!!! '
       points: -1
-    - smallAnswer: Rupert
-      extendedAnswer: The lines tell me... your soul mate is Rupert
+    - smallAnswer: Steve
+      extendedAnswer: Your soul mate is Steve...?
       review: CAN'T BELIEVE DEY FOUGHT MY SWOL MATE WAS RUPERT I HATE HIM!!!
-      customerResponse: WHAT?? nO WAY I HATE RUPERT HE DOESN'T EVEN LIKE MY TWUMPERT!!!
+      customerResponse: also they didn't even know who my swol mate was.
       points: -1
   - prompt: 'Alright... What can I do two get Candice to wove me forever??? '
     answers:
     - smallAnswer: Try showering
-      extendedAnswer: The stars tell me... you must seek the water... like some sort
-        of shower?
+      extendedAnswer: You must seek the water... like some sort of shower perhaps?
       review: 
       customerResponse: hmmm I don't know... but if it'll make candice wove me...
       points: 0
     - smallAnswer: Get flowers
-      extendedAnswer: Your palm tells me... candice needs a big romantic gesture...
-        Like flowers
+      extendedAnswer: Candice needs a big romantic gesture... Perhaps flowers?
       review: 'I twied giving my swol make flours like the psychic said but she just
         told me to "stop following her" and that "served you coffee like once"... '
       customerResponse: Wow! I nwever thought of that! I'll try that right now!
       points: 1
     - smallAnswer: don't
-      extendedAnswer: The lines tell me... you should not persue candice any further
+      extendedAnswer: You should not persue candice any further
       review: CAN'T BELIEVE DEY FOUGHT I SHOULD STOP TALKING TO CANDICE THIS IS UNBEWEVABLE
       customerResponse: WHAT??? I'LL NEVER STOP WOVING CANDICE SHE'S THE ONE
       points: -1

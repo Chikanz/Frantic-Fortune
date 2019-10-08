@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,8 +10,17 @@ public class CustomerData : ScriptableObject
     public string CharacterName;
     public Sprite CharacterSprite;
     public Sprite HandSprite;
+    public Sprite HeadSprite;
+    public Sprite GoodReact;
+    public Sprite BadReact;
+    public bool reactOnBody;
+    
+    [Header("Custom text")]
     public string introText;
     public string OutroText;
+    public string palmBounds;
+    public string palmStill;
+    public string tooLong;
     public Question[] Questions;
     public SocialProfileData FacebookData;
 
@@ -22,7 +30,6 @@ public class CustomerData : ScriptableObject
 public struct Question
 {
     public string prompt;
-    [ReorderableList]
     public List<response> answers;
 }
 

@@ -163,5 +163,7 @@ public class SocialProfileController : MonoBehaviour
 				star.color = reviewStarOff;
 			}
 		}
+
+		updateCanvas = true;
 	}
 }

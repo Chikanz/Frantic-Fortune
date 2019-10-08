@@ -3,3 +3,5 @@ LocomoJam/Temp/
 *.sln
 LocomoJam/Assets/NaughtyAttributes/
 LocomoJam/build/
+LocomoJam/debug/
+

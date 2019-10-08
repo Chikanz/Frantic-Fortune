@@ -77,6 +77,7 @@ public class SocialPostController : MonoBehaviour
 		{
 			contentImage.gameObject.SetActive(true);
 			contentImage.sprite = data.contentImage;
+			contentImage.preserveAspect = true;
 		}
 		contentText.text = data.contentText;
 		if (data.commentImage == null || string.IsNullOrEmpty(data.commentText))

@@ -63,21 +63,15 @@ public class SocialProfileController : MonoBehaviour
 			Canvas.ForceUpdateCanvases();
 			LayoutRebuilder.ForceRebuildLayoutImmediate(profilePanel.transform as RectTransform);
 		}
-		if (loaderPanel == null || profilePanel == null || reviewPanel == null)
-			return;
-
-		if (loaderPanel.activeInHierarchy == true)
-		{
-			loaderTimer += Time.deltaTime;
-			if (loaderTimer >= loaderDuration)
-			{
-				loaderPanel.SetActive(false);
-				//profilePanel.SetActive(true);
-				reviewPanel.SetActive(false);
-				updateCanvas = true;
-			}
-		}
 	}
+
+	public void ToggleLoading(bool b)
+	{
+		loaderPanel.SetActive(b);
+		reviewPanel.SetActive(b);
+		updateCanvas = true;
+	}
+	
 
 	private void OnReviewButtonOkayClicked()
 	{

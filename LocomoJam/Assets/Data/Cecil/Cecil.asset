@@ -19,7 +19,9 @@ MonoBehaviour:
   GoodReact: {fileID: 21300000, guid: d2a5db833ccd08641943d9273fd3fb7f, type: 3}
   BadReact: {fileID: 21300000, guid: a46a0d83e78c09a4881c53578c68d337, type: 3}
   reactOnBody: 0
-  introText: H-h-hi i'd like my fwortune told pwease
+  introText:
+  - Hewo, I'd like my fortune read pwease.
+  - I'm having some twouble with a girl I like...
   OutroText: Ok fwanks! Now I just gotta find Candice...
   palmBounds: Hey! My pwams over here!
   palmStill: Hey! Do you have a palm fetish or something???
@@ -45,7 +47,7 @@ MonoBehaviour:
   - prompt: Ok! Ok! I want to knoww... Who's my soul mate??
     answers:
     - smallAnswer: Candice
-      extendedAnswer: 'I see... Your soul mate is... Candice '
+      extendedAnswer: 'Your soul mate is... Candice '
       review: WOW I CWAN'T BELIEVE THEY KNEW MY SWOL MATE!!!
       customerResponse: WOW WEALLY??? THAT'S SO COOL!!
       points: 1
@@ -64,8 +66,9 @@ MonoBehaviour:
     - smallAnswer: Try showering
       extendedAnswer: You must seek the water... like some sort of shower perhaps?
       review: 
-      customerResponse: hmmm I don't know... but if it'll make candice wove me...
-      points: 0
+      customerResponse: SHOWERING??? NO WAY!! EVERYONE KNOWS THAT GIRLS LIKE STINKY
+        BOYS!!!!
+      points: -1
     - smallAnswer: Get flowers
       extendedAnswer: Candice needs a big romantic gesture... Perhaps flowers?
       review: 'I twied giving my swol make flours like the psychic said but she just

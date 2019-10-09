@@ -17,9 +17,14 @@ MonoBehaviour:
   HandSprite: {fileID: 21300000, guid: f1ac5c65311b2b548b67dfa36675b091, type: 3}
   HeadSprite: {fileID: 0}
   GoodReact: {fileID: 21300000, guid: ca236b7ddffaaf14fa6200d2af76b7cd, type: 3}
-  BadReact: {fileID: 21300000, guid: b31e850455fe6204c8804fbed8d7f944, type: 3}
+  BadReact: {fileID: 21300000, guid: 0e7b887f5c9e94a40b8c12b910d01e9b, type: 3}
   reactOnBody: 1
-  introText: GREETINGS MORTAL. I HAVE COME TO YOUR PLACE OF BUSINESS SEEKING AMUSEMENT.
+  introText:
+  - GREETINGS MORTAL. I AM ZALGO, DESTROYER OF WORLDS. I HAVE ASSUMED THIS MORTAL
+    FORM FOR THE SAKE OF ENJOYMENT ON MY VACATION.
+  - I HEARD ABOUT YOUR PLACE OF BUSINESS ON THE MOBILE APPLICATION NAMED 'YELP', AND
+    FOUND IT TO BE QUITE AMUSING.
+  - NOW, ANSWER MY QUESTIONS OR I WILL SMITE YOU.
   OutroText: YOU HAVE PLEASED ME MORTAL. I SHALL SPARE YOU FROM MY WRATH
   palmBounds: FACINATING, THE MORTAL PRETENDS TO READ MY FATE, YET IS ON THEIR PHONE.
     I SHALL CONTINUE  THIS CHARADE FOR THE SAKE OF AMUSEMENT.
@@ -27,59 +32,24 @@ MonoBehaviour:
     I SHALL CONTINUE  THIS CHARADE FOR THE SAKE OF AMUSEMENT.
   tooLong: HUMOUROUS, THE MORTAL CANNOT KEEP UP THE CHARADE.
   Questions:
-  - prompt: INFORM ME OF WHO MY MASTER IS OR I WILL SMITE YOU
+  - prompt: INFORM ME OF WHO MY MASTER IS.
     answers:
     - smallAnswer: Satan
       extendedAnswer: Your master is... Satan?
-      review: HUMOUROUS, THEY DO NOT KNOW TO WHOM I SERVE
+      review: HUMOUROUS, THEY DID NOT KNOW TO WHOM I SERVE
       customerResponse: YOU ARE INCORRECT. HOWEVER, THE SMITE WAS A JUST A JAPE. I
         ENJOY JAPES VERY MUCH
       points: -1
     - smallAnswer: Cuthulu
-      extendedAnswer: You serve... the lord Cuthulu.
+      extendedAnswer: You serve the lord Cuthulu.
       review: 
       customerResponse: "E\u0309X\u0343\u033D\u0308\u0313\u0308\u034C\u0344\u0315\u0325\u0353\u0329\u032A\u0354\u033AC\u030E\u033D\u0368\u0362\u035A\u033A\u0330E\u030E\u031A\u034A\u030A\u036A\u036F\u0337\u031C\u0326\u032A\u0324L\u0313\u0368\u0342\u0313\u036C\u0308\u0307\u034E\u0348\u0333L\u034C\u0309\u036B\u036D\u035A\u0330\u0356E\u034C\u0300\u035C\u0359\u0348\u031E\u032F\u031D\u0325\u0329N\u0363\u0301\u031A\u0342\u0357\u0301\u0368\u0327\u0318\u031FT\u030F\u0314\u0302\u0300\u030A\u0348\u0332\u032A\u033B\u032F.
         YOU ARE CORRECT. I ENJOY THIS VERY MUCH."
       points: 1
     - smallAnswer: Zeus
       extendedAnswer: You serve under... Zeus?
-      review: HUMOUROUS, THEY DO NOT KNOW TO WHOM I SERVE
+      review: HUMOUROUS, THEY DID NOT KNOW TO WHOM I SERVE
       customerResponse: YOU ARE INCORRECT. HOWEVER, THE SMITE WAS A JUST A JAPE. I
         ENJOY JAPES VERY MUCH
       points: -1
-  - prompt: Ok! Ok! I want to knoww... Who's my soul mate??
-    answers:
-    - smallAnswer: Candice
-      extendedAnswer: 'I see... Your soul mate is... Candice '
-      review: WOW I CWAN'T BELIEVE THEY KNEW MY SWOL MATE!!!
-      customerResponse: WOW WEALLY??? THAT'S SO COOL!!
-      points: 1
-    - smallAnswer: Keep searching
-      extendedAnswer: You have not encountered them yet... You must keep searching
-      review: also they didn't even know who my swol mate was.
-      customerResponse: 'NO!!! I ALREADY HAVE!!! I''M SURE!! IT''S CANDICE!!!!! '
-      points: -1
-    - smallAnswer: Steve
-      extendedAnswer: Your soul mate is Steve...?
-      review: CAN'T BELIEVE DEY FOUGHT MY SWOL MATE WAS RUPERT I HATE HIM!!!
-      customerResponse: also they didn't even know who my swol mate was.
-      points: -1
-  - prompt: 'Alright... What can I do two get Candice to wove me forever??? '
-    answers:
-    - smallAnswer: Try showering
-      extendedAnswer: You must seek the water... like some sort of shower perhaps?
-      review: 
-      customerResponse: hmmm I don't know... but if it'll make candice wove me...
-      points: 0
-    - smallAnswer: Get flowers
-      extendedAnswer: Candice needs a big romantic gesture... Perhaps flowers?
-      review: 'I twied giving my swol make flours like the psychic said but she just
-        told me to "stop following her" and that "served you coffee like once"... '
-      customerResponse: Wow! I nwever thought of that! I'll try that right now!
-      points: 1
-    - smallAnswer: don't
-      extendedAnswer: You should not persue candice any further
-      review: CAN'T BELIEVE DEY FOUGHT I SHOULD STOP TALKING TO CANDICE THIS IS UNBEWEVABLE
-      customerResponse: WHAT??? I'LL NEVER STOP WOVING CANDICE SHE'S THE ONE
-      points: -1
-  FacebookData: {fileID: 11400000, guid: a7b26b54bc67c0943ad3eaea816fd7be, type: 2}
+  FacebookData: {fileID: 11400000, guid: 6a3bf5f793250c8428554a745d9fe5ab, type: 2}

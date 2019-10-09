@@ -10,6 +10,9 @@ public class DialougeRunner : MonoBehaviour
     public string CurrentText { get; private set;}
     
     public bool isRunning { get; private set; }
+
+    private Coroutine currentRoutine;
+    private Coroutine currentExclaimRoutine;
     
     // Start is called before the first frame update
     void Awake()
@@ -23,14 +26,17 @@ public class DialougeRunner : MonoBehaviour
         
     }
 
+    //Run normal dialouge text, stops all other text
     public void RunString(string s)
     { 
-        StartCoroutine(RunStringCoroutine(s));
+        if(currentRoutine != null) StopCoroutine(currentRoutine);
+        if(currentExclaimRoutine != null) StopCoroutine(currentExclaimRoutine);
+        
+        currentRoutine = StartCoroutine(RunStringCoroutine(s));
     }
     
-    public IEnumerator RunStringCoroutine(string s)
+    private IEnumerator RunStringCoroutine(string s)
     {
-        StopAllCoroutines();
         yield return RunStringCoroutineInternal(s);
     }
     
@@ -38,16 +44,17 @@ public class DialougeRunner : MonoBehaviour
     {
         TMP.text = ""; 
         CurrentText = s;
+        isRunning = true;
         
         int index = 0;
         WaitForSecondsRealtime wait = new WaitForSecondsRealtime(textAddSpeed);
-        WaitForSecondsRealtime waitLonger = new WaitForSecondsRealtime(textAddSpeed * 2);
+        WaitForSecondsRealtime waitLonger = new WaitForSecondsRealtime(0.5f);
         while (index < s.Length)
         {
             var c = s[index];
-            TMP.text += c;
+            TMP.text += c; //todo use string builder
             index++;
-            if (c == '!' || c == '?') 
+            if (c == '?' || c == '.' || c == ',') 
                 yield return waitLonger;
             else
                 yield return wait;
@@ -55,5 +62,22 @@ public class DialougeRunner : MonoBehaviour
         }
         
         yield return new WaitForSecondsRealtime(1);
+        isRunning = false;
     }
+    
+    //Exclaim something in the middle of dialouge
+    public void Exclaim(string s)
+    {
+        currentExclaimRoutine = StartCoroutine(ExclaimRoutine(s));
+    }
+    
+    
+    private IEnumerator ExclaimRoutine(string s)
+    {
+        string previous = CurrentText;
+        yield return RunStringCoroutineInternal(s);
+        yield return new WaitForSeconds(3);
+        yield return RunStringCoroutineInternal(previous);
+    }
+
 }

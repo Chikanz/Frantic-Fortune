@@ -17,7 +17,8 @@ public class CustomerData : ScriptableObject
     public bool reactOnBody;
     
     [Header("Custom text")]
-    public string introText;
+    [ReorderableList]
+    public List<string> introText;
     public string OutroText;
     public string palmBounds;
     public string palmStill;

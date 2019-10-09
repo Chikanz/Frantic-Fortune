@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using NaughtyAttributes;
 using UnityEngine;
 
 [System.Serializable]
@@ -32,5 +33,6 @@ public class SocialProfileData : ScriptableObject
 	[TextArea(4, 4)]
 	public string StatusText;
 	public SocialInterest[] Interests;
-	public SocialPost[] Posts;
+	[ReorderableList]
+	public List<SocialPost> Posts;
 }

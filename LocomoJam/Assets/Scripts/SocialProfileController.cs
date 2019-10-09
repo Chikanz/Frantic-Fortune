@@ -129,7 +129,7 @@ public class SocialProfileController : MonoBehaviour
 		{
 			posts[indexPost].gameObject.SetActive(false);
 		}
-		for (int indexPostData = 0; indexPostData < data.Posts.Length; indexPostData++)
+		for (int indexPostData = 0; indexPostData < data.Posts.Count; indexPostData++)
 		{
 			if(indexPostData >= posts.Count)
 			{

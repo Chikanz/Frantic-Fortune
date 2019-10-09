@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,7 +22,8 @@ public class CustomerData : ScriptableObject
     public string palmBounds;
     public string palmStill;
     public string tooLong;
-    public Question[] Questions;
+    [ReorderableList]
+    public List<Question> Questions;
     public SocialProfileData FacebookData;
 
 }

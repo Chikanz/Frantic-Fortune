@@ -426,7 +426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DR: {fileID: 1693591714}
   Customers:
-  - {fileID: 11400000, guid: 9b60c687bc5e4ec4bb5add6c75e7c0ac, type: 2}
+  - {fileID: 11400000, guid: f2eeda636dfd0a7439ab4f32899e9dca, type: 2}
   CharacterHand: {fileID: 1338638103}
   Character: {fileID: 133288584}
   Head: {fileID: 783907599}
@@ -2881,7 +2881,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: baaa02791932cbc4f94e5cfa42574261, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1

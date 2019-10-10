@@ -356,7 +356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -439,8 +439,9 @@ MonoBehaviour:
   HM: {fileID: 745716094}
   TimePerQuestion: 30
   QuestionTimeSlider: {fileID: 671868418}
+  PhoneParent: {fileID: 41877842}
   MysticShit:
-  - Your palm lines tells me
+  - Your palm lines tell me
   - The spirits whisper to me
   - The dieties proclaim that
   - The stars tell me
@@ -455,6 +456,18 @@ MonoBehaviour:
     customerResponse: Uhh.. alright then
     points: -1
   SPC: {fileID: 1293492446768499646}
+  tutorialText:
+  - Welcome to Frantic Fortunes, stranger...
+  - In this game you play as a shoddy fortune teller who predicts their clients's
+    fortunes with the help of their fakebook feed.
+  - < On the left is the palm view, where you must use WASD to pretend to read your
+    client's palm lines.
+  - Make sure to always be moving, and try not to accidentally read the air!
+  - '> On the right is the phone view, where you must frantically scroll your client''s
+    feed for clues to answer their questions.'
+  - 'Scroll fast! You only have 30 seconds to answer before the jig is up. '
+  - Chose from the cards below to answer your customer
+  - 'Good luck, stranger. '
 --- !u!4 &187065660
 Transform:
   m_ObjectHideFlags: 0
@@ -524,7 +537,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Or maybe the fish?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6599e20d563964f4292687aac08a930f, type: 2}
   m_sharedMaterial: {fileID: 4216220807224931533, guid: 6599e20d563964f4292687aac08a930f,
@@ -553,8 +566,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 28.5
-  m_fontSizeBase: 28.5
+  m_fontSize: 25.16
+  m_fontSizeBase: 25.16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -563,7 +576,7 @@ MonoBehaviour:
   m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -55.4
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -594,10 +607,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 212910513}
-    characterCount: 6
+    characterCount: 18
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 3
+    wordCount: 4
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -872,7 +885,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: I hear the tacos are good
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6599e20d563964f4292687aac08a930f, type: 2}
   m_sharedMaterial: {fileID: 4216220807224931533, guid: 6599e20d563964f4292687aac08a930f,
@@ -901,8 +914,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 28.5
-  m_fontSizeBase: 28.5
+  m_fontSize: 25.16
+  m_fontSizeBase: 25.16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -911,7 +924,7 @@ MonoBehaviour:
   m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -55.4
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -942,12 +955,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 536538790}
-    characterCount: 6
+    characterCount: 25
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 5
+    wordCount: 6
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -1699,7 +1712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1947,7 +1960,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: So many options...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6599e20d563964f4292687aac08a930f, type: 2}
   m_sharedMaterial: {fileID: 4216220807224931533, guid: 6599e20d563964f4292687aac08a930f,
@@ -1976,8 +1989,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 28.5
-  m_fontSizeBase: 28.5
+  m_fontSize: 25.16
+  m_fontSizeBase: 25.16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1986,7 +1999,7 @@ MonoBehaviour:
   m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -55.4
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -2017,10 +2030,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 843258260}
-    characterCount: 6
+    characterCount: 18
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 2
+    wordCount: 3
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -2340,7 +2353,7 @@ GameObject:
   - component: {fileID: 963740189}
   - component: {fileID: 963740188}
   m_Layer: 5
-  m_Name: Image
+  m_Name: 'Purple BG '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2510,7 +2523,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -2.9000244}
   m_SizeDelta: {x: 385.4, y: 201.6}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &1042427197

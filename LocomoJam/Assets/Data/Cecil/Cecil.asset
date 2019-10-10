@@ -35,15 +35,15 @@ MonoBehaviour:
       customerResponse: Wow how did yo- ..WAIT A SECOND NO IT'S CANDICE!!!!
       points: -1
     - smallAnswer: 'Candice '
-      extendedAnswer: Your best friend's name is... candice
+      extendedAnswer: Your best friend's name is... Candice?
+      review: They didn't even know my best fwends name!
+      customerResponse: CANDICE???? CANDICE IS MORE THAN A FRIEND!!
+      points: -1
+    - smallAnswer: Rupert
+      extendedAnswer: Your best friends name is Rupert
       review: They knew my best fwend's name too!!!
       customerResponse: Wow how did you know!! You really are psychic!!
       points: 1
-    - smallAnswer: Rupert
-      extendedAnswer: Your best friends name is... Rupert?
-      review: 'They didn''t even know my best fwends name! '
-      customerResponse: RUPERT???? I HATE RUPERT HE DOESN'T LIKE MY TRUMPET!!!!
-      points: -1
   - prompt: Ok! Ok! I want to knoww... Who's my soul mate??
     answers:
     - smallAnswer: Candice
@@ -58,8 +58,8 @@ MonoBehaviour:
       points: -1
     - smallAnswer: Steve
       extendedAnswer: Your soul mate is Steve...?
-      review: CAN'T BELIEVE DEY FOUGHT MY SWOL MATE WAS RUPERT I HATE HIM!!!
-      customerResponse: also they didn't even know who my swol mate was.
+      review: CAN'T BELIEVE DEY FOUGHT MY SWOL MATE WAS STEVE I HATE HIM!!!
+      customerResponse: STEVE???? I DON'T KNOW ANY STEVES!!!!
       points: -1
   - prompt: 'Alright... What can I do two get Candice to wove me forever??? '
     answers:

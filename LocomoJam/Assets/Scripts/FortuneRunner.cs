@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using NaughtyAttributes;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -30,9 +31,12 @@ public class FortuneRunner : MonoBehaviour
 
     public Slider QuestionTimeSlider;
 
+    public GameObject PhoneParent;  
+
     private int? response;
 
     private WaitForSeconds waitASec;
+    private WaitUntil waitForAnyKey;
     private WaitUntil waitForDialougeFinished;
     private bool canExclaimFocus = true;
     private bool canExclaimPalm = true;
@@ -47,18 +51,23 @@ public class FortuneRunner : MonoBehaviour
     private int reviewScore;
     private string reviewText;
 
+    [ReorderableList]
+    public List<string> tutorialText;
+
     private GameObject ResponseOptionsParent => ResponseOptions[0].transform.parent.parent.gameObject;
     
     // Start is called before the first frame update
     void Start()
     {
-        //waitForAnyKey = new WaitUntil(() => Input.anyKey);
+        waitForAnyKey = new WaitUntil(() => Input.anyKey);
         waitASec = new WaitForSeconds(2.0f);
         waitForDialougeFinished = new WaitUntil( () => !DR.isRunning);
         ResponseOptionsParent.SetActive(false);
         QuestionTimeSlider.gameObject.SetActive(false);
 
         characterHandIntro = CharacterHand.GetComponentInParent<HandIntro>();
+        
+        PhoneParent.SetActive(false);
         
         StartCoroutine(GameLoop());
     }
@@ -70,6 +79,29 @@ public class FortuneRunner : MonoBehaviour
 
     IEnumerator GameLoop()
     {
+        //Tutorial
+        for (var i = 0; i < tutorialText.Count; i++)
+        {
+            string s = tutorialText[i];
+            if (i == 0) s += "\n(Any key to continue)";
+            DR.RunString($"{s}");
+            
+            if(i == 2) YourHand.TogglePos(true);
+            if(i == 4) PhoneParent.SetActive(true);
+            if(i == 6) ResponseOptionsParent.SetActive(true);
+            
+            //yield return waitForDialougeFinished;
+            yield return waitForAnyKey;
+        }
+        
+        //Cleanup tutorial 
+        DR.RunString(string.Empty);
+        YourHand.TogglePos(false);
+        ResponseOptionsParent.SetActive(false);
+
+        yield return waitASec;
+        yield return waitASec;
+
         foreach (CustomerData c in Customers)
         {
             SPC.SetupProfile(c.FacebookData); //load facebook data
@@ -246,6 +278,7 @@ public class FortuneRunner : MonoBehaviour
 
         //Maybe fade other answers here
     }
+    
 
 
     private IEnumerator React(Sprite s, Sprite normal, bool onBody)

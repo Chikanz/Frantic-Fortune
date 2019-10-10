@@ -90,7 +90,7 @@ public class FortuneRunner : MonoBehaviour
             if(i == 4) PhoneParent.SetActive(true);
             if(i == 6) ResponseOptionsParent.SetActive(true);
             
-            //yield return waitForDialougeFinished;
+            yield return waitForDialougeFinished;
             yield return waitForAnyKey;
         }
         
@@ -254,8 +254,13 @@ public class FortuneRunner : MonoBehaviour
             reviewScore = Mathf.Clamp(reviewScore, 0, 5);
             SPC.OpenReview(reviewText, reviewScore);
             
-            //todo continue and toggle loading on ok pressed  
-            
+            //todo continue and toggle loading on ok pressed
+            bool okPressed = false;
+            SPC.OnReviewButtonPressed += (sender, args) => okPressed = true;
+            yield return new WaitUntil(() => okPressed);
+            SPC.ToggleLoading(true);
+
+            yield return waitASec;
         }
     }
 

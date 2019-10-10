@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Chika\.Rider2019.1\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Chika\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_LocomoJam.-223431058.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Chika\OneDrive\Documents\Frantic-Fortune\LocomoJam" t="IncludeRecursive">
+    <e p="C:\Users\Chika\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_LocomoJam.-1700448169.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Chika\Documents\Test\LocomoJam" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="FingerLookAt.cs" t="Include" />
@@ -172,6 +171,7 @@
             </e>
           </e>
         </e>
+        <e p="ResettiTheSpaghetti.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="CustomerData.cs" t="Include" />
           <e p="DialougeRunner.cs" t="Include" />
@@ -215,13 +215,16 @@
           </e>
         </e>
       </e>
+      <e p="Library" t="ExcludeRecursive" />
       <e p="LocomoJam.sln" t="IncludeFlat" />
       <e p="NaughtyAttributes.Core.csproj" t="IncludeRecursive" />
       <e p="NaughtyAttributes.Editor.csproj" t="IncludeRecursive" />
       <e p="NaughtyAttributes.Test.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
-      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
     </e>
   </component>
 </project>

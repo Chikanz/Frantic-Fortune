@@ -15,14 +15,9 @@ MonoBehaviour:
   ProfileName: Cecil TrembleBottom
   ProfileImage: {fileID: 21300000, guid: f4350600a8d76b74e9b6a5be847af080, type: 3}
   StatusText: "<b>Works in:</b> DD&D Lawfirms \n<b>Relationship Status:</b> In a relationship
-    (request pending)"
-  Interests:
-  - interestImage: {fileID: 0}
-    interestName: Rainbows
-  - interestImage: {fileID: 0}
-    interestName: Unicorns
-  - interestImage: {fileID: 0}
-    interestName: Nuclear Annihilation
+    (request pending)\n<b>Interests:</b>\n \u2022 Raindows\n \u2022 Cute animals \n
+    \u2022 Candice"
+  Interests: []
   Posts:
   - senderImage: {fileID: 21300000, guid: f4350600a8d76b74e9b6a5be847af080, type: 3}
     senderText: <color=blue>Cecil TrembleBottom</color>

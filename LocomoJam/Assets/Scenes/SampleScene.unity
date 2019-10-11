@@ -450,6 +450,9 @@ MonoBehaviour:
   - Your palm tells me
   - I can see that
   - I see
+  - The song of your people says
+  - The winds of time say
+  - The voice of the mother says
   defaultResponse:
     smallAnswer: uhh
     extendedAnswer: Uhhh... I see... Mystic things... in store... for you?
@@ -464,8 +467,8 @@ MonoBehaviour:
   - < On the left is the palm view, where you must use WASD to pretend to read your
     client's palm lines.
   - Make sure to always be moving, and try not to accidentally read the air!
-  - '> On the right is the phone view, where you must frantically scroll your client''s
-    feed for clues to answer their questions.'
+  - '> On the right is the phone view, where you must frantically scroll (by clicking)
+    your client''s feed for clues to answer their questions.'
   - 'Scroll fast! You only have 30 seconds to answer before the jig is up. '
   - Chose from the cards below to answer your customer
   - 'Good luck, stranger. '

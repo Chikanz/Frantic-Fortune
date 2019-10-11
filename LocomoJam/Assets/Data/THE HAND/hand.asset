@@ -62,16 +62,16 @@ MonoBehaviour:
         DELICIOUS FORM OF SUFFERING.
       points: -1
     - smallAnswer: Calamari
-      extendedAnswer: You enjoy...fried calamari?
+      extendedAnswer: You enjoy... fried calamari?
       review: ANGER. I WOULD NEVER EAT THE MASTER'S CHILDREN.
       customerResponse: WHAT? ZALGO WOULD NEVER! SQUID ARE THE MASTERS CHILDREN AND
         ARE ALSO LITTLE CUTIES.
       points: -1
     - smallAnswer: Apple
-      extendedAnswer: You consume. the flesh of the apple.
+      extendedAnswer: You consume the flesh of the apple.
       review: THE HUMAN IS FAMILIAR WITH THE SIN APPLE.
       customerResponse: "E\u0309X\u0343\u033D\u0308\u0313\u0308\u034C\u0344\u0315\u0325\u0353\u0329\u032A\u0354\u033AC\u030E\u033D\u0368\u0362\u035A\u033A\u0330E\u030E\u031A\u034A\u030A\u036A\u036F\u0337\u031C\u0326\u032A\u0324L\u0313\u0368\u0342\u0313\u036C\u0308\u0307\u034E\u0348\u0333L\u034C\u0309\u036B\u036D\u035A\u0330\u0356E\u034C\u0300\u035C\u0359\u0348\u031E\u032F\u031D\u0325\u0329N\u0363\u0301\u031A\u0342\u0357\u0301\u0368\u0327\u0318\u031FT\u030F\u0314\u0302\u0300\u030A\u0348\u0332\u032A\u033B\u032F.
-        I SHALL SMITE YOU LATER THAN OTHERS. A JAPE! HA HA."
+        I SHALL SMITE YOU LATER THAN OTHERS. A JAPE! HA. HA."
       points: 1
   - prompt: WHEN DID ZALGO ARRIVE IN THIS REALM?
     answers:
@@ -81,13 +81,13 @@ MonoBehaviour:
       customerResponse: INSOLENT MEAT BAG! YOU ARE LAZY. HAHA. IT IS BUT A JAPE.
       points: -1
     - smallAnswer: Christmas
-      extendedAnswer: My ancestors say you arrived at Christmas
+      extendedAnswer: You arrived at... Christmas?
       review: UNABLE TO DISCERN MY ARRIVAL DATE.
       customerResponse: NO, MEAT BAG. I AM NOT A CUTE REINDEER.
       points: -1
     - smallAnswer: Halloween
-      extendedAnswer: The whispers of time say... Halloween
-      review: SMART AND SCROLLS TO THE BOTTOM.
+      extendedAnswer: You arrived on Halloween.
+      review: SHOWED EXELLEND ABILITY IN SCROLLING
       customerResponse: INDEED, HUMAN! I WAS SURPRISED THE PEASANTS DID NOT FLEE MY
         ARRIVAL. THE NEXT DAY I WAS PLEASED TO SEE THEIR NORMAL CLOTHES AND HEAR THEIR
         SCREAMS.
@@ -95,17 +95,17 @@ MonoBehaviour:
   - prompt: INTRIGUING. WHAT CAREER PATH SHOULD ZALGO PURSUE?
     answers:
     - smallAnswer: Chef
-      extendedAnswer: The winds of time say.. you should be a chef.
+      extendedAnswer: You should be a... Chef?
       review: THE HUMAN SHOULD NOT ADVISE CAREER CHOICE.
-      customerResponse: FALSE. THE HAND OF CTHULU IS TOO CLUMSY.
+      customerResponse: FALSE. THE HAND OF CTHULU IS MUCH TOO CLUMSY.
       points: -1
     - smallAnswer: Influencer
-      extendedAnswer: The song of your people says you are destined to be an Influencer.
+      extendedAnswer: You are destined to be an Influencer.
       review: I WILL LEAD MY FOLLOWERS INTO THE MAW OF THE MASTER.
-      customerResponse: YES..YES THIS FEELS RIGHT. THE WORLD MUST KNOW ZALGO.
+      customerResponse: YES... YES THIS FEELS RIGHT. THE WORLD MUST KNOW ZALGO.
       points: 1
     - smallAnswer: Accountant
-      extendedAnswer: The winds of time say.. Accountant is your destiny.
+      extendedAnswer: Accounting is your destiny...?
       review: THE HUMAN SHOULD NOT ADVISE CAREER CHOICE.
       customerResponse: FALSE. I AM MORE BEAUTY THAN BRAINS. 5 IS AS HIGH AS ZALGO
         NEEDS TO COUNT.

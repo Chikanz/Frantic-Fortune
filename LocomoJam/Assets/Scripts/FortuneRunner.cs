@@ -61,7 +61,7 @@ public class FortuneRunner : MonoBehaviour
     {
         waitForAnyKey = new WaitUntil(() => Input.anyKey);
         waitASec = new WaitForSeconds(2.0f);
-        waitForDialougeFinished = new WaitUntil( () => !DR.isRunning);
+        waitForDialougeFinished = new WaitUntil( () => !DR.isRunning || Input.GetKey(KeyCode.P));
         ResponseOptionsParent.SetActive(false);
         QuestionTimeSlider.gameObject.SetActive(false);
 
